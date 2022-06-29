@@ -8,9 +8,13 @@
 import Foundation
 
 struct Model: Codable {
+    let data: Data?
+}
+
+struct Data: Codable {
+    let memes: [Memes]?
+}
+
+struct Memes: Codable {
     let name: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-    }
 }

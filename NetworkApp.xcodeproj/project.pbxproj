@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890F798C286C74E70047D483 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890F798B286C74E70047D483 /* NetworkManager.swift */; };
 		896651FA286B35CD00F7C1C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896651F9286B35CD00F7C1C4 /* AppDelegate.swift */; };
 		896651FC286B35CD00F7C1C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896651FB286B35CD00F7C1C4 /* SceneDelegate.swift */; };
 		896651FE286B35CD00F7C1C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896651FD286B35CD00F7C1C4 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		890F798B286C74E70047D483 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		896651F6286B35CD00F7C1C4 /* NetworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		896651F9286B35CD00F7C1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		896651FB286B35CD00F7C1C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				896651FB286B35CD00F7C1C4 /* SceneDelegate.swift */,
 				8966520D286B377E00F7C1C4 /* Model.swift */,
 				896651FD286B35CD00F7C1C4 /* ViewController.swift */,
+				890F798B286C74E70047D483 /* NetworkManager.swift */,
 				896651FF286B35CD00F7C1C4 /* Main.storyboard */,
 				89665202286B35CF00F7C1C4 /* Assets.xcassets */,
 				89665204286B35CF00F7C1C4 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				896651FE286B35CD00F7C1C4 /* ViewController.swift in Sources */,
 				896651FA286B35CD00F7C1C4 /* AppDelegate.swift in Sources */,
+				890F798C286C74E70047D483 /* NetworkManager.swift in Sources */,
 				896651FC286B35CD00F7C1C4 /* SceneDelegate.swift in Sources */,
 				8966520E286B377E00F7C1C4 /* Model.swift in Sources */,
 			);

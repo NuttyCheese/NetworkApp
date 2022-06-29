@@ -17,10 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-nK-UTH">
-                                <rect key="frame" x="170" y="299" width="74" height="119"/>
+                                <rect key="frame" x="176.5" y="316" width="61" height="274"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="GET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iC-pQ-B6q">
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgI-tm-9h1">
-                                        <rect key="frame" x="0.0" y="0.0" width="74" height="31"/>
+                                        <rect key="frame" x="0.0" y="77.5" width="61" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="GET"/>
                                         <connections>
@@ -28,25 +34,33 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GD7-ke-Sl4">
-                                        <rect key="frame" x="0.0" y="88" width="74" height="31"/>
+                                        <rect key="frame" x="0.0" y="165.5" width="61" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="POST"/>
                                         <connections>
                                             <action selector="postRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BCf-ff-bS5"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POST" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92g-G1-jUX">
+                                        <rect key="frame" x="0.0" y="253.5" width="61" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cRh-nK-UTH" secondAttribute="bottom" constant="444" id="I8P-PG-N3i"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cRh-nK-UTH" secondAttribute="trailing" constant="170" id="aby-j0-hwK"/>
-                            <constraint firstItem="cRh-nK-UTH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="255" id="gAD-OW-TGo"/>
-                            <constraint firstItem="cRh-nK-UTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="170" id="vpt-Zq-6CF"/>
+                            <constraint firstItem="cRh-nK-UTH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="5AM-QX-UH4"/>
+                            <constraint firstItem="cRh-nK-UTH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kKv-tm-LcU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getLabel" destination="3iC-pQ-B6q" id="EDu-FE-PcT"/>
+                        <outlet property="postLabel" destination="92g-G1-jUX" id="9dC-e3-QFN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
