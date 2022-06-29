@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     private func give() {
         NetworkManager.shared.postRequest(with: list, to: Link.postRequest.rawValue) { _ in
             self.postLabel.text = self.list.keys.first
-            print(self.list.randomElement()!)
+            print(self.list)
         }
     }
 }
