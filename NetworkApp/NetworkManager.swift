@@ -30,8 +30,7 @@ class NetworkManager {
     }
     
     func postRequest(with data: [String: Any], to url: String, completion: @escaping(Any) -> ()) {
-        guard let url = URL(string: url) else { return }
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: data) else { return }
+        guard let url = URL(string: url), let httpBody = try? JSONSerialization.data(withJSONObject: data) else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -44,10 +43,12 @@ class NetworkManager {
                 return
             }
             print(response)
-            
             do {
                 let json = try JSONSerialization.jsonObject(with: data)
-                completion(json)
+                DispatchQueue.main.async {
+                    completion(json)
+                }
+                
             }catch {
                 print(error)
             }

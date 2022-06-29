@@ -40,12 +40,10 @@ class ViewController: UIViewController {
     }
     
     private func give() {
-        NetworkManager.shared.postRequest(with: list, to: Link.postRequest.rawValue) { result in
-            print(self.list)
+        NetworkManager.shared.postRequest(with: list, to: Link.postRequest.rawValue) { _ in
+            self.postLabel.text = self.list.keys.first
+            print(self.list.randomElement()!)
         }
-//        NetworkManager.shared.postRequest(with: modelMemes.data?.memes?.first.name, to: Link.postRequest.rawValue) { result in
-//            print(self.modelMemes.data?.memes?.first?.name)
-//        }
     }
 }
 
