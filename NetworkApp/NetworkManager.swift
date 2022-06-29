@@ -29,13 +29,18 @@ class NetworkManager {
         }.resume()
     }
     
-    func postRequest(with data: [String: Any], to url: String, completion: @escaping(Any) -> ()) {
-        guard let url = URL(string: url), let httpBody = try? JSONSerialization.data(withJSONObject: data) else { return }
+    func postRequest(with data: Model?, to url: String, completion: @escaping(Any) -> ()) {
+        guard
+            let url = URL(string: url),
+            let httpBody = try? JSONEncoder().encode(data) else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = httpBody
+        
+        let testString = String(data: httpBody, encoding: .utf8)
+        print(testString)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, let response = response else {

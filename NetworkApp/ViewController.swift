@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var postLabel: UILabel!
     
     
-    private var modelMemes: Model!
+    private var modelMemes: Model?
     private let list = [
         "name": "Networking",
         "imageUrl": "image url",
@@ -33,14 +33,16 @@ class ViewController: UIViewController {
     }
     
     private func fetch() {
-        NetworkManager.shared.getResponse(with: Link.getResponse.rawValue) { model in
+        NetworkManager.shared.getResponse(with: Link.getResponse.rawValue) { [weak self] model in
+            guard let self = self else { return }
             self.modelMemes = model
-            self.getLabel.text = self.modelMemes.data?.memes?.first?.name
+            self.getLabel.text = self.modelMemes?.data?.memes?.first?.name
         }
     }
     
     private func give() {
-        NetworkManager.shared.postRequest(with: list, to: Link.postRequest.rawValue) { _ in
+        NetworkManager.shared.postRequest(with: modelMemes, to: Link.postRequest.rawValue) { [weak self] _ in
+            guard let self = self else { return }
             self.postLabel.text = self.list.keys.first
             print(self.list)
         }
