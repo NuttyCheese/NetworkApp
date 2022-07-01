@@ -28,21 +28,31 @@ class ViewController: UIViewController {
        fetch()
     }
     
+    
+    
     @IBAction func postRequest(_ sender: Any) {
         give()
     }
     
     private func fetch() {
-        NetworkManager.shared.getResponse(with: Link.getResponse.rawValue) { model in
-            self.modelMemes = model
-            self.getLabel.text = self.modelMemes.data?.memes?.first?.name
+        Task {
+            do {
+                modelMemes = try await NetworkManager.shared.getResponse(with: Link.getResponse.rawValue)
+                getLabel.text = self.modelMemes.data?.memes?.first?.name
+            }catch {
+                print(error)
+            }
         }
     }
     
     private func give() {
-        NetworkManager.shared.postRequest(with: list, to: Link.postRequest.rawValue) { _ in
-            self.postLabel.text = self.list.keys.first
-            print(self.list)
+        Task {
+            do {
+                let data = try await NetworkManager.shared.postRequest(with: list, to: Link.postRequest.rawValue)
+                print(data)
+            }catch {
+                print(error)
+            }
         }
     }
 }
